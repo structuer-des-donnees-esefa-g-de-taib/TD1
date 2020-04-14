@@ -1,12 +1,14 @@
-int calcule_longueur(Liste liste){
+int calcule_longueur(Liste *liste){
 	int a,x;
 	x=0;
-	Liste *elem;
-    Element *element;
-    elem=elem->premier;
-    while(elem != NULL){
+	if (liste == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+    Element *actuel = liste->premier;
+    while(actuel != NULL){
     	x++;
-    	elem = element->suivant;
+    	actuel = actuel->suivant;
 	}
 	return x;
 }
